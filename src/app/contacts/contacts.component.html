@@ -1,0 +1,22 @@
+<div *ngIf="selectedContact">
+  <h2>El teléfono de {{selectedContact.name}} es {{selectedContact.phone}}</h2>
+</div>
+<table class="table">
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Phone</th>
+          <th>&nbsp;</th>
+      </tr>
+  </thead>
+
+  <tr>
+    <td><input [(ngModel)]="newContact.name"/></td>
+    <td><input [(ngModel)]="newContact.phone"/></td>
+    <td><button class="btn btn-success" (click)="addContact()">Add</button></td>
+  </tr>  
+
+  <tr *ngFor="let contact of contacts" app-editable-contact [contact]="contact">
+  </tr>
+
+</table>
