@@ -3,7 +3,7 @@ var bodyParser = require('body-parser');
 var DataStore = require('nedb');
 var cors = require('cors');
 
-var port = 3000;
+var port = (process.env.PORT || 3000);
 var BASE_API_PATH = "/api/v1";
 var dbFilename = __dirname + "/contacts.json";
 var path = require('path');
